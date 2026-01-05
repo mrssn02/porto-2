@@ -1,0 +1,977 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Atlas Konstruksi — Kontraktor Profesional</title>
+
+  <!-- SEO dasar -->
+  <meta name="description" content="Atlas Konstruksi adalah perusahaan kontraktor profesional untuk pembangunan, renovasi, interior, dan maintenance. Konsultasi & survey cepat via WhatsApp." />
+  <meta name="robots" content="index,follow" />
+  <link rel="canonical" href="https://example.com/" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Atlas Konstruksi — Kontraktor Profesional" />
+  <meta property="og:description" content="Layanan kontraktor, renovasi, interior. Tepat waktu, rapi, transparan." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://example.com/" />
+  <meta property="og:image" content="https://example.com/og-cover.jpg" />
+
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <!-- Structured Data (Organization) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Atlas Konstruksi",
+    "url": "https://example.com/",
+    "logo": "https://example.com/logo.png",
+    "contactPoint": [{
+      "@type": "ContactPoint",
+      "telephone": "+62-812-3456-7890",
+      "contactType": "customer service",
+      "areaServed": "ID",
+      "availableLanguage": ["id"]
+    }]
+  }
+  </script>
+
+  <style>
+    :root{
+      --bg:#070707;
+      --surface:#0e0e10;
+      --card:#121216;
+      --text:#f5f2ea;
+      --muted:#b7b2a6;
+
+      --gold:#d8b36a;
+      --gold2:#f0d08a;
+
+      --shadow: 0 22px 60px rgba(0,0,0,.45);
+      --radius: 18px;
+      --radius2: 26px;
+      --max: 1120px;
+      --ring: 0 0 0 3px rgba(216,179,106,.18);
+
+      --font: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
+    }
+
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0;
+      font-family:var(--font);
+      color:var(--text);
+      background:
+        radial-gradient(1100px 500px at 20% 0%, rgba(216,179,106,.12), transparent 60%),
+        radial-gradient(900px 500px at 85% 20%, rgba(240,208,138,.08), transparent 55%),
+        linear-gradient(180deg, #050505 0%, var(--bg) 40%, #050505 100%);
+      overflow-x:hidden;
+    }
+
+    a{color:inherit; text-decoration:none}
+    .container{max-width:var(--max); margin:0 auto; padding:0 18px}
+
+    /* Top Bar */
+    .topbar{
+      border-bottom:1px solid rgba(255,255,255,.06);
+      background:rgba(7,7,7,.65);
+      backdrop-filter: blur(14px);
+    }
+    .topbar .inner{
+      display:flex; align-items:center; justify-content:space-between;
+      padding:10px 0;
+      gap:10px;
+      color:var(--muted);
+      font-size:13px;
+    }
+    .topbar .inner .info{display:flex; gap:14px; flex-wrap:wrap}
+    .chip{
+      display:inline-flex; align-items:center; gap:8px;
+      padding:8px 10px;
+      border-radius:999px;
+      border:1px solid rgba(255,255,255,.08);
+      background:rgba(255,255,255,.03);
+      white-space:nowrap;
+    }
+    .gold-dot{
+      width:8px; height:8px; border-radius:999px;
+      background:linear-gradient(135deg, var(--gold), var(--gold2));
+      box-shadow: 0 0 0 4px rgba(216,179,106,.12);
+    }
+
+    /* Header / Nav */
+    header{
+      position:sticky; top:0; z-index:50;
+      background:rgba(7,7,7,.55);
+      backdrop-filter: blur(14px);
+      border-bottom:1px solid rgba(255,255,255,.06);
+    }
+    .nav{
+      display:flex; align-items:center; justify-content:space-between;
+      padding:12px 0;
+      gap:12px;
+    }
+
+    /* Logo lebih premium */
+    .brand{
+      display:flex; align-items:center; gap:12px;
+      font-weight:850;
+      letter-spacing:.2px;
+      white-space:nowrap;
+      min-width: 240px;
+    }
+    .logo-wrap{
+      width:44px; height:44px;
+      border-radius:16px;
+      background:
+        radial-gradient(16px 16px at 30% 25%, rgba(255,255,255,.18), transparent 60%),
+        linear-gradient(135deg, rgba(216,179,106,.98), rgba(240,208,138,.92));
+      box-shadow:
+        0 18px 42px rgba(216,179,106,.22),
+        inset 0 0 0 1px rgba(0,0,0,.35);
+      display:grid; place-items:center;
+    }
+    .logo-mark{
+      width:30px; height:30px;
+      filter: drop-shadow(0 10px 20px rgba(0,0,0,.35));
+    }
+    .brand-text{display:flex; flex-direction:column; line-height:1.05}
+    .brand-text strong{font-size:14.5px}
+    .brand-text span{font-size:12.5px; color:rgba(245,242,234,.78); font-weight:650; letter-spacing:.3px}
+
+    nav ul{list-style:none; display:flex; gap:16px; padding:0; margin:0}
+    nav a{
+      color:var(--muted);
+      font-size:14px;
+      padding:10px 10px;
+      border-radius:12px;
+      transition:.2s ease;
+    }
+    nav a:hover{background:rgba(255,255,255,.05); color:var(--text)}
+    .nav-cta{display:flex; gap:10px; align-items:center}
+
+    /* Mobile menu */
+    .menu-btn{
+      display:none;
+      width:42px; height:42px;
+      border-radius:14px;
+      border:1px solid rgba(255,255,255,.10);
+      background:rgba(255,255,255,.04);
+      color:var(--text);
+      align-items:center; justify-content:center;
+      cursor:pointer;
+    }
+    .mobile-panel{
+      display:none;
+      padding:10px 0 14px;
+      border-top:1px solid rgba(255,255,255,.06);
+    }
+    .mobile-panel a{
+      display:block;
+      padding:12px 12px;
+      border-radius:14px;
+      color:var(--muted);
+    }
+    .mobile-panel a:hover{background:rgba(255,255,255,.05); color:var(--text)}
+    .mobile-actions{
+      display:grid;
+      grid-template-columns: 1fr 1fr;
+      gap:10px;
+      padding:10px 0 0;
+    }
+    .mobile-panel.open{display:block}
+
+    /* Buttons */
+    .btn{
+      display:inline-flex; align-items:center; justify-content:center; gap:10px;
+      padding:12px 16px;
+      border-radius:14px;
+      border:1px solid rgba(255,255,255,.10);
+      background:rgba(255,255,255,.04);
+      color:var(--text);
+      font-weight:750;
+      font-size:14px;
+      transition:.2s ease;
+      box-shadow: 0 10px 30px rgba(0,0,0,.14);
+      cursor:pointer;
+    }
+    .btn:hover{transform: translateY(-1px); border-color: rgba(255,255,255,.18)}
+    .btn:focus{outline:none; box-shadow: var(--ring)}
+    .btn-primary{
+      border:0;
+      background:linear-gradient(135deg, rgba(216,179,106,.98), rgba(240,208,138,.92));
+      color:#15110a;
+      box-shadow: 0 18px 44px rgba(216,179,106,.22);
+    }
+    .btn-ghost{
+      border:1px solid rgba(216,179,106,.26);
+      background:rgba(216,179,106,.06);
+      color:var(--text);
+    }
+    .btn-block{width:100%}
+    .btn-small{padding:10px 12px; border-radius:12px; font-size:13px}
+
+    /* HERO with image background + overlay images */
+    .hero{
+      padding:56px 0 30px;
+      position:relative;
+      overflow:hidden;
+      border-bottom: 1px solid rgba(255,255,255,.06);
+      min-height: 520px;
+    }
+    .hero::before{
+      content:"";
+      position:absolute;
+      inset:0;
+      background:
+        linear-gradient(180deg, rgba(0,0,0,.80) 0%, rgba(0,0,0,.62) 42%, rgba(0,0,0,.86) 100%),
+        url("assets/construction-hero.jpg"); /* background utama */
+      background-size: cover;
+      background-position: center;
+      filter: saturate(1.05) contrast(1.05);
+      transform: scale(1.03);
+      z-index:0;
+    }
+    .hero::after{
+      content:"";
+      position:absolute;
+      inset:-40px;
+      background:
+        radial-gradient(760px 320px at 18% 12%, rgba(216,179,106,.18), transparent 60%),
+        radial-gradient(760px 320px at 86% 18%, rgba(240,208,138,.10), transparent 60%);
+      z-index:1;
+      pointer-events:none;
+    }
+    .hero .container{position:relative; z-index:3}
+
+    /* === Overlay gambar-gambar konstruksi (di atas background) === */
+    .hero-overlays{
+      position:absolute;
+      inset:0;
+      z-index:2;                /* di atas bg, di bawah konten */
+      pointer-events:none;
+    }
+    .overlay-img{
+      position:absolute;
+      width: clamp(160px, 22vw, 320px);
+      height: auto;
+      border-radius: 22px;
+      border: 1px solid rgba(216,179,106,.22);
+      background: rgba(0,0,0,.18);
+      box-shadow: 0 22px 60px rgba(0,0,0,.55);
+      opacity: .50;
+      filter: saturate(1.05) contrast(1.05);
+      backdrop-filter: blur(10px);
+      transform: translateZ(0);
+    }
+    .overlay-img.soft{
+      opacity:.42;
+      filter: saturate(1.02) contrast(1.02) blur(.2px);
+    }
+    .overlay-img.small{
+      width: clamp(130px, 18vw, 260px);
+      opacity:.46;
+    }
+
+    /* posisi overlay */
+    .overlay-1{ top: 84px; right: -26px; transform: rotate(6deg); }
+    .overlay-2{ bottom: 32px; right: 56px; transform: rotate(-5deg); }
+    .overlay-3{ top: 140px; left: -30px; transform: rotate(-7deg); }
+
+    /* vignette biar fokus ke teks */
+    .vignette{
+      position:absolute;
+      inset:0;
+      z-index:2;
+      pointer-events:none;
+      background: radial-gradient(900px 420px at 50% 40%, transparent 40%, rgba(0,0,0,.35) 100%);
+      mix-blend-mode: multiply;
+      opacity:.8;
+    }
+
+    .hero-grid{
+      display:grid;
+      grid-template-columns: 1.15fr .85fr;
+      gap:22px;
+      align-items:start;
+    }
+    .kicker{
+      display:inline-flex; align-items:center; gap:10px;
+      padding:10px 14px;
+      border-radius:999px;
+      border:1px solid rgba(216,179,106,.22);
+      background:rgba(255,255,255,.03);
+      color:rgba(245,242,234,.78);
+      font-size:13.5px;
+    }
+    .h1{
+      margin:14px 0 10px;
+      font-size:46px;
+      letter-spacing:-.6px;
+      line-height:1.06;
+    }
+    .accent{
+      background:linear-gradient(135deg, var(--gold), var(--gold2));
+      -webkit-background-clip:text; background-clip:text; color:transparent;
+    }
+    .lead{
+      margin:0 0 14px;
+      color:rgba(245,242,234,.84);
+      line-height:1.75;
+      font-size:16px;
+      max-width: 64ch;
+    }
+    .hero-actions{
+      display:flex; gap:10px; flex-wrap:wrap;
+      margin: 14px 0 12px;
+    }
+
+    .proof{
+      display:flex; gap:10px; flex-wrap:wrap;
+      margin-top:10px;
+      color:rgba(183,178,166,.98);
+      font-size:13px;
+    }
+    .proof .item{
+      display:flex; gap:8px; align-items:center;
+      padding:10px 12px;
+      border-radius:14px;
+      border:1px solid rgba(255,255,255,.10);
+      background:rgba(0,0,0,.25);
+      backdrop-filter: blur(10px);
+    }
+    .tick{
+      width:18px; height:18px; border-radius:6px;
+      display:grid; place-items:center;
+      background:rgba(216,179,106,.14);
+      border:1px solid rgba(216,179,106,.24);
+      color:var(--gold2);
+      font-weight:900;
+      font-size:12px;
+    }
+
+    /* Hero Card (glass) */
+    .hero-card{
+      border-radius: var(--radius2);
+      border:1px solid rgba(255,255,255,.12);
+      background: rgba(10,10,12,.55);
+      backdrop-filter: blur(12px);
+      box-shadow: var(--shadow);
+      overflow:hidden;
+    }
+    .hero-card .inner{padding:18px}
+    .card-title{
+      display:flex; align-items:center; justify-content:space-between; gap:10px;
+      margin-bottom:10px;
+    }
+    .badge{
+      display:inline-flex; align-items:center; gap:8px;
+      padding:8px 12px;
+      border-radius:999px;
+      border:1px solid rgba(255,255,255,.12);
+      background:rgba(255,255,255,.03);
+      color:var(--muted);
+      font-size:13px;
+      white-space:nowrap;
+    }
+    .mini-grid{
+      display:grid;
+      grid-template-columns: 1fr 1fr;
+      gap:10px;
+      margin-top:10px;
+    }
+    .mini{
+      border-radius:16px;
+      border:1px solid rgba(255,255,255,.10);
+      background:rgba(0,0,0,.20);
+      padding:12px;
+      min-height: 92px;
+    }
+    .mini h4{margin:0 0 6px; font-size:14px}
+    .mini p{margin:0; color:rgba(183,178,166,.98); font-size:13px; line-height:1.55}
+
+    /* Sections */
+    section{padding:44px 0}
+    .section-head{
+      display:flex; align-items:flex-end; justify-content:space-between; gap:16px;
+      margin-bottom:14px;
+      flex-wrap:wrap;
+    }
+    .section-head h2{
+      margin:0;
+      font-size:26px;
+      letter-spacing:-.3px;
+    }
+    .section-head p{
+      margin:0;
+      color:var(--muted);
+      max-width: 62ch;
+      line-height:1.75;
+      font-size:14.8px;
+    }
+
+    .grid-2{
+      display:grid;
+      grid-template-columns: 1fr 1fr;
+      gap:12px;
+      align-items:start;
+    }
+
+    .cards{
+      display:grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap:12px;
+    }
+    .card{
+      border-radius: var(--radius);
+      border:1px solid rgba(255,255,255,.10);
+      background:rgba(255,255,255,.03);
+      box-shadow: 0 18px 42px rgba(0,0,0,.24);
+      padding:16px;
+      transition:.2s ease;
+    }
+    .card:hover{transform: translateY(-2px); border-color: rgba(216,179,106,.22)}
+    .icon{
+      width:44px; height:44px;
+      border-radius:16px;
+      display:grid; place-items:center;
+      background:rgba(216,179,106,.10);
+      border:1px solid rgba(216,179,106,.20);
+      margin-bottom:10px;
+      color:var(--gold2);
+      font-weight:900;
+    }
+    .card h3{margin:0 0 6px; font-size:16px}
+    .card p{margin:0; color:var(--muted); font-size:14px; line-height:1.7}
+    .meta{
+      display:flex; align-items:center; justify-content:space-between; gap:10px;
+      margin-top:12px;
+      color:rgba(245,242,234,.82);
+      font-size:13px;
+    }
+    .tag{
+      padding:7px 10px;
+      border-radius:999px;
+      border:1px solid rgba(255,255,255,.10);
+      background:rgba(255,255,255,.03);
+      color:var(--muted);
+      white-space:nowrap;
+    }
+
+    /* CTA band */
+    .cta{
+      border-radius: var(--radius2);
+      border:1px solid rgba(216,179,106,.22);
+      background:rgba(0,0,0,.24);
+      backdrop-filter: blur(12px);
+      box-shadow: var(--shadow);
+      padding:18px;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:14px;
+      flex-wrap:wrap;
+      margin-top:18px;
+    }
+    .cta h3{margin:0; font-size:18px}
+    .cta p{margin:6px 0 0; color:rgba(183,178,166,.98); line-height:1.65; font-size:14px}
+    .cta .actions{display:flex; gap:10px; flex-wrap:wrap}
+
+    /* Contact / Form */
+    .form{
+      display:grid;
+      grid-template-columns: 1.2fr .8fr;
+      gap:12px;
+      align-items:start;
+    }
+    .field{
+      width:100%;
+      padding:12px 12px;
+      border-radius:14px;
+      border:1px solid rgba(255,255,255,.12);
+      background:rgba(0,0,0,.18);
+      color:var(--text);
+      outline:none;
+      font: inherit;
+    }
+    textarea.field{resize:vertical}
+
+    /* Footer */
+    footer{
+      padding:30px 0 44px;
+      border-top:1px solid rgba(255,255,255,.06);
+      color:var(--muted);
+    }
+
+    /* Floating WhatsApp */
+    .float-wa{
+      position:fixed;
+      right:16px;
+      bottom:16px;
+      z-index:60;
+      display:flex;
+      align-items:center;
+      gap:10px;
+      padding:12px 14px;
+      border-radius: 999px;
+      border:1px solid rgba(255,255,255,.14);
+      background: rgba(7,7,7,.62);
+      backdrop-filter: blur(12px);
+      box-shadow: 0 20px 60px rgba(0,0,0,.45);
+    }
+    .float-wa .bubble{
+      width:36px; height:36px; border-radius:14px;
+      background:linear-gradient(135deg, rgba(216,179,106,.98), rgba(240,208,138,.92));
+      display:grid; place-items:center;
+      color:#15110a;
+      font-weight:900;
+    }
+    .float-wa span{font-size:13.5px; color:var(--muted)}
+    .float-wa strong{display:block; color:var(--text); font-size:14px; margin-top:1px}
+
+    /* Responsive */
+    @media (max-width: 980px){
+      .hero-grid{grid-template-columns:1fr; gap:16px}
+      .h1{font-size:40px}
+      .cards{grid-template-columns: 1fr 1fr}
+      .form{grid-template-columns:1fr}
+      nav ul{display:none}
+      .menu-btn{display:inline-flex}
+      .nav-cta{display:none}
+
+      /* overlay disesuaikan */
+      .overlay-1{ right:-38px; top: 96px; }
+      .overlay-2{ right: 18px; }
+      .overlay-3{ left:-38px; }
+    }
+    @media (max-width: 520px){
+      .brand{min-width:auto}
+      .h1{font-size:34px}
+      .hero-actions{display:grid; grid-template-columns:1fr; gap:10px}
+      .hero-actions .btn{width:100%}
+      .cta .actions{display:grid; grid-template-columns:1fr; width:100%}
+      .cta .actions .btn{width:100%}
+      .proof .item{width:100%}
+      .cards{grid-template-columns: 1fr}
+      .mobile-actions{grid-template-columns:1fr}
+      .float-wa span{display:none}
+      .float-wa{padding:10px}
+      .mini-grid{grid-template-columns:1fr}
+
+      /* di HP overlay jangan terlalu ramai */
+      .overlay-3{ display:none; }
+      .overlay-img{ opacity:.38; }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="topbar">
+    <div class="container">
+      <div class="inner">
+        <div class="info">
+          <span class="chip"><span class="gold-dot"></span> Kontraktor • Renovasi • Interior</span>
+          <span class="chip">📍 Area: Jabodetabek (contoh)</span>
+        </div>
+        <div class="info">
+          <span class="chip">⏱️ Senin–Sabtu 08.00–18.00</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <header>
+    <div class="container">
+      <div class="nav">
+        <a class="brand" href="#top" aria-label="Atlas Konstruksi">
+          <span class="logo-wrap" aria-hidden="true">
+            <svg class="logo-mark" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M32 6L54 18V46L32 58L10 46V18L32 6Z" fill="#16110A" opacity="0.22"/>
+              <path d="M32 8.5L51 19.5V44.5L32 55.5L13 44.5V19.5L32 8.5Z" stroke="#16110A" stroke-opacity="0.30" stroke-width="2"/>
+              <path d="M19 44L32 18L45 44H40.6L32 27.4L23.4 44H19Z" fill="#16110A"/>
+              <path d="M24.5 44H39.5" stroke="#16110A" stroke-width="3" stroke-linecap="round"/>
+              <path d="M20 48.5H44" stroke="#16110A" stroke-opacity="0.55" stroke-width="2" stroke-linecap="round"/>
+            </svg>
+          </span>
+          <span class="brand-text">
+            <strong>Atlas Konstruksi</strong>
+            <span>CONTRACTOR COMPANY</span>
+          </span>
+        </a>
+
+        <nav aria-label="Navigasi">
+          <ul>
+            <li><a href="#about">About</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#contact">Kontak</a></li>
+          </ul>
+        </nav>
+
+        <button class="menu-btn" id="menuBtn" aria-label="Buka menu" aria-expanded="false">☰</button>
+
+        <div class="nav-cta">
+          <a class="btn btn-small btn-ghost" href="#services">Lihat Layanan</a>
+          <a class="btn btn-small btn-primary" href="#contact">Konsultasi</a>
+        </div>
+      </div>
+
+      <div class="mobile-panel" id="mobilePanel" aria-label="Menu mobile">
+        <a href="#about" onclick="closeMenu()">About</a>
+        <a href="#services" onclick="closeMenu()">Services</a>
+        <a href="#contact" onclick="closeMenu()">Kontak</a>
+        <div class="mobile-actions">
+          <a class="btn btn-ghost btn-block" href="#services" onclick="closeMenu()">Lihat Layanan</a>
+          <a class="btn btn-primary btn-block" href="#contact" onclick="closeMenu()">Konsultasi</a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <main id="top" class="hero">
+    <!-- Overlay gambar-gambar konstruksi -->
+    <div class="hero-overlays" aria-hidden="true">
+      <img class="overlay-img overlay-1" src="assets/overlay-crane.png" alt="" />
+      <img class="overlay-img overlay-2 soft" src="assets/overlay-blueprint.png" alt="" />
+      <img class="overlay-img overlay-3 small" src="assets/overlay-worker.png" alt="" />
+      <div class="vignette"></div>
+    </div>
+
+    <div class="container">
+      <div class="hero-grid">
+        <div>
+          <div class="kicker"><span class="gold-dot"></span> Company Profile • Corporate • SEO-ready</div>
+          <h1 class="h1">Bangun proyek dengan standar <span class="accent">rapi, aman, dan tepat waktu</span>.</h1>
+          <p class="lead">
+            <b>Atlas Konstruksi</b> adalah perusahaan kontraktor yang fokus pada kualitas pekerjaan, transparansi anggaran,
+            dan manajemen proyek profesional—mulai dari renovasi hingga pembangunan skala menengah.
+          </p>
+
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#contact">📄 Minta Penawaran</a>
+            <a class="btn btn-ghost" target="_blank"
+               href="https://wa.me/6281234567890?text=Halo%20Atlas%20Konstruksi,%20saya%20ingin%20konsultasi%20proyek.">
+              💬 WhatsApp
+            </a>
+          </div>
+
+          <div class="proof">
+            <div class="item"><span class="tick">✓</span> Timeline jelas & terukur</div>
+            <div class="item"><span class="tick">✓</span> Material sesuai spesifikasi</div>
+            <div class="item"><span class="tick">✓</span> Dokumentasi progres</div>
+          </div>
+
+          <div class="cta">
+            <div>
+              <h3>Butuh survey cepat?</h3>
+              <p>Kirim lokasi + kebutuhan proyek. Kami bantu estimasi awal & jadwal pengerjaan.</p>
+            </div>
+            <div class="actions">
+              <a class="btn btn-ghost" href="#services">Lihat Services</a>
+              <a class="btn btn-primary" href="#contact">Konsultasi Sekarang</a>
+            </div>
+          </div>
+        </div>
+
+        <aside class="hero-card" aria-label="Ringkasan Perusahaan">
+          <div class="inner">
+            <div class="card-title">
+              <h2 style="margin:0; font-size:18px">Ringkasan</h2>
+              <span class="badge">Since 2016 (contoh)</span>
+            </div>
+
+            <div class="mini-grid">
+              <div class="mini">
+                <h4>Fokus Proyek</h4>
+                <p>Bangunan, renovasi, interior, infrastruktur ringan.</p>
+              </div>
+              <div class="mini">
+                <h4>Standar</h4>
+                <p>QC checklist, laporan progres, kontrol timeline.</p>
+              </div>
+              <div class="mini">
+                <h4>Layanan</h4>
+                <p>Design & build, RAB, hingga serah terima.</p>
+              </div>
+              <div class="mini">
+                <h4>Area Kerja</h4>
+                <p>Jabodetabek & sekitarnya (sesuaikan).</p>
+              </div>
+            </div>
+
+            <div style="margin-top:12px; padding:12px; border-radius:16px; border:1px solid rgba(255,255,255,.10); background:rgba(255,255,255,.03); color:rgba(183,178,166,.98); font-size:13.2px; line-height:1.65;">
+              <b style="color:var(--text)">Setup gambar:</b>
+              <div>BG: <b>assets/construction-hero.jpg</b></div>
+              <div>Overlay: <b>assets/overlay-crane.png</b>, <b>overlay-blueprint.png</b>, <b>overlay-worker.png</b></div>
+            </div>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </main>
+
+  <!-- About -->
+  <section id="about">
+    <div class="container">
+      <div class="section-head">
+        <div>
+          <h2>About Company</h2>
+          <p>Profil singkat perusahaan yang meyakinkan untuk company profile corporate.</p>
+        </div>
+      </div>
+
+      <div class="grid-2">
+        <div class="card">
+          <div class="icon">🏗️</div>
+          <h3>Siapa Kami</h3>
+          <p>
+            Atlas Konstruksi mengutamakan <b>ketepatan waktu</b>, <b>kualitas</b>, dan <b>komunikasi</b>.
+            Proyek dikerjakan dengan SOP rapi dari perencanaan sampai finishing.
+          </p>
+          <div class="meta">
+            <span class="tag">Corporate SOP</span>
+            <span>QC + Laporan</span>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="icon">🧭</div>
+          <h3>Visi & Nilai</h3>
+          <p>
+            Menjadi mitra konstruksi terpercaya untuk proyek yang aman, efisien, dan sesuai spesifikasi.
+            Nilai utama: <b>transparansi</b>, <b>keselamatan</b>, dan <b>hasil rapi</b>.
+          </p>
+          <div class="meta">
+            <span class="tag">Safety First</span>
+            <span>Transparan</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Services -->
+  <section id="services">
+    <div class="container">
+      <div class="section-head">
+        <div>
+          <h2>Services</h2>
+          <p>Daftar layanan kontraktor yang umum dicari. Tinggal sesuaikan sesuai bisnis klien.</p>
+        </div>
+        <a class="btn btn-small btn-ghost" href="#contact">Minta Proposal</a>
+      </div>
+
+      <div class="cards">
+        <article class="card">
+          <div class="icon">🏢</div>
+          <h3>Pembangunan</h3>
+          <p>Struktur sampai finishing untuk hunian, ruko, kantor, dan proyek komersial.</p>
+          <div class="meta"><span class="tag">Design & Build</span><span>Timeline jelas</span></div>
+        </article>
+
+        <article class="card">
+          <div class="icon">🧱</div>
+          <h3>Renovasi</h3>
+          <p>Renovasi total/parsial, perbaikan atap, lantai, kamar mandi, hingga fasad.</p>
+          <div class="meta"><span class="tag">Rapi & aman</span><span>Minim gangguan</span></div>
+        </article>
+
+        <article class="card">
+          <div class="icon">🪚</div>
+          <h3>Interior & Finishing</h3>
+          <p>Partisi, plafon, kitchen set, pengecatan, dan finishing premium.</p>
+          <div class="meta"><span class="tag">Detail oriented</span><span>Premium look</span></div>
+        </article>
+
+        <article class="card">
+          <div class="icon">📐</div>
+          <h3>RAB & Estimasi</h3>
+          <p>Perhitungan biaya & material sesuai spesifikasi, lengkap breakdown & opsi.</p>
+          <div class="meta"><span class="tag">Transparan</span><span>Terstruktur</span></div>
+        </article>
+
+        <article class="card">
+          <div class="icon">🧰</div>
+          <h3>Maintenance</h3>
+          <p>Perawatan berkala, perbaikan minor, dan pekerjaan cepat untuk operasional.</p>
+          <div class="meta"><span class="tag">Fast response</span><span>SLA opsional</span></div>
+        </article>
+
+        <article class="card">
+          <div class="icon">📦</div>
+          <h3>General Supplier</h3>
+          <p>Penyediaan material tertentu sesuai kebutuhan proyek (opsional).</p>
+          <div class="meta"><span class="tag">By request</span><span>Spesifikasi</span></div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact">
+    <div class="container">
+      <div class="section-head">
+        <div>
+          <h2>Kontak & Penawaran</h2>
+          <p>Form demo portfolio: kirim data ke WhatsApp (tanpa backend).</p>
+        </div>
+      </div>
+
+      <div class="form">
+        <div class="card">
+          <h3 style="margin-top:0">Kirim kebutuhan proyek</h3>
+          <p style="margin:0 0 12px; color:var(--muted); line-height:1.7;">
+            Isi data singkat, lalu klik “Kirim ke WhatsApp”. Admin akan follow up.
+          </p>
+
+          <form onsubmit="return sendToWhatsApp(event)">
+            <div style="display:grid; gap:12px; grid-template-columns:1fr 1fr;">
+              <label style="display:grid; gap:6px;">
+                <span style="font-size:13px; color:var(--muted)">Nama</span>
+                <input class="field" required name="nama" placeholder="Nama Anda" />
+              </label>
+
+              <label style="display:grid; gap:6px;">
+                <span style="font-size:13px; color:var(--muted)">No. HP</span>
+                <input class="field" required name="hp" placeholder="08xxxxxxxxxx" />
+              </label>
+
+              <label style="display:grid; gap:6px;">
+                <span style="font-size:13px; color:var(--muted)">Jenis Proyek</span>
+                <select class="field" name="jenis">
+                  <option>Pembangunan</option>
+                  <option>Renovasi</option>
+                  <option>Interior</option>
+                  <option>Maintenance</option>
+                  <option>Lainnya</option>
+                </select>
+              </label>
+
+              <label style="display:grid; gap:6px;">
+                <span style="font-size:13px; color:var(--muted)">Perkiraan Mulai</span>
+                <input class="field" type="month" name="mulai" />
+              </label>
+            </div>
+
+            <label style="display:grid; gap:6px; margin-top:12px;">
+              <span style="font-size:13px; color:var(--muted)">Detail singkat</span>
+              <textarea class="field" name="detail" rows="4" placeholder="Contoh: renovasi rumah 2 lantai, fasad + kamar mandi..."></textarea>
+            </label>
+
+            <div style="display:grid; gap:10px; margin-top:14px;">
+              <button class="btn btn-primary btn-block" type="submit">Kirim ke WhatsApp</button>
+              <a class="btn btn-ghost btn-block" target="_blank"
+                 href="https://wa.me/6281234567890?text=Halo%20Atlas%20Konstruksi,%20saya%20ingin%20konsultasi%20proyek.">
+                Chat WhatsApp
+              </a>
+            </div>
+          </form>
+        </div>
+
+        <div class="card">
+          <h3 style="margin-top:0">Informasi Perusahaan</h3>
+          <div style="display:grid; gap:10px; margin-top:12px;">
+            <div class="chip" style="justify-content:space-between">
+              <span>📍 Alamat</span><span style="color:var(--text)">Jl. Contoh No. 123</span>
+            </div>
+            <div class="chip" style="justify-content:space-between">
+              <span>☎️ Telepon</span><span style="color:var(--text)">(021) 1234-5678</span>
+            </div>
+            <div class="chip" style="justify-content:space-between">
+              <span>✉️ Email</span><span style="color:var(--text)">info@atlaskonstruksi.co.id</span>
+            </div>
+            <div class="chip" style="justify-content:space-between">
+              <span>🕒 Jam</span><span style="color:var(--text)">08.00–18.00</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container" style="display:flex; justify-content:space-between; gap:14px; flex-wrap:wrap; align-items:flex-start;">
+      <div>
+        <div class="brand" style="opacity:.95">
+          <span class="logo-wrap" aria-hidden="true">
+            <svg class="logo-mark" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M32 6L54 18V46L32 58L10 46V18L32 6Z" fill="#16110A" opacity="0.22"/>
+              <path d="M32 8.5L51 19.5V44.5L32 55.5L13 44.5V19.5L32 8.5Z" stroke="#16110A" stroke-opacity="0.30" stroke-width="2"/>
+              <path d="M19 44L32 18L45 44H40.6L32 27.4L23.4 44H19Z" fill="#16110A"/>
+              <path d="M24.5 44H39.5" stroke="#16110A" stroke-width="3" stroke-linecap="round"/>
+              <path d="M20 48.5H44" stroke="#16110A" stroke-opacity="0.55" stroke-width="2" stroke-linecap="round"/>
+            </svg>
+          </span>
+          <span class="brand-text">
+            <strong>Atlas Konstruksi</strong>
+            <span>CONTRACTOR COMPANY</span>
+          </span>
+        </div>
+        <div style="margin-top:8px; font-size:13px; color:rgba(183,178,166,.95)">
+          © <span id="year"></span> Atlas Konstruksi. Company Profile — corporate black & gold.
+        </div>
+      </div>
+
+      <div style="display:flex; gap:10px; flex-wrap:wrap;">
+        <a class="btn btn-small" href="#about">About</a>
+        <a class="btn btn-small" href="#services">Services</a>
+        <a class="btn btn-small" href="#contact">Kontak</a>
+      </div>
+    </div>
+  </footer>
+
+  <a class="float-wa" target="_blank"
+     href="https://wa.me/6281234567890?text=Halo%20Atlas%20Konstruksi,%20saya%20ingin%20konsultasi%20proyek.">
+    <div class="bubble">WA</div>
+    <div>
+      <span>Butuh penawaran?</span>
+      <strong>Chat WhatsApp</strong>
+    </div>
+  </a>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+
+    // Mobile menu
+    const btn = document.getElementById("menuBtn");
+    const panel = document.getElementById("mobilePanel");
+    btn.addEventListener("click", () => {
+      const open = panel.classList.toggle("open");
+      btn.setAttribute("aria-expanded", String(open));
+      btn.textContent = open ? "✕" : "☰";
+    });
+    function closeMenu(){
+      panel.classList.remove("open");
+      btn.setAttribute("aria-expanded","false");
+      btn.textContent = "☰";
+    }
+    window.closeMenu = closeMenu;
+
+    // WA form
+    function sendToWhatsApp(e){
+      e.preventDefault();
+      const f = e.target;
+
+      const nama = f.nama.value.trim();
+      const hp = f.hp.value.trim();
+      const jenis = f.jenis.value;
+      const mulai = (f.mulai.value || "-");
+      const detail = f.detail.value.trim() || "-";
+
+      const msg =
+        `Halo Atlas Konstruksi, saya ingin konsultasi proyek.%0A` +
+        `Nama: ${encodeURIComponent(nama)}%0A` +
+        `No HP: ${encodeURIComponent(hp)}%0A` +
+        `Jenis proyek: ${encodeURIComponent(jenis)}%0A` +
+        `Perkiraan mulai: ${encodeURIComponent(mulai)}%0A` +
+        `Detail: ${encodeURIComponent(detail)}`;
+
+      const waNumber = "6281234567890"; // ganti nomor WA
+      window.open(`https://wa.me/${waNumber}?text=${msg}`, "_blank");
+      return false;
+    }
+  </script>
+</body>
+</html>
