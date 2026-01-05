@@ -227,7 +227,7 @@
       inset:0;
       background:
         linear-gradient(180deg, rgba(0,0,0,.80) 0%, rgba(0,0,0,.62) 42%, rgba(0,0,0,.86) 100%),
-        url("assets/construction-hero.jpg"); /* background utama */
+        url("assets/construction-hero.jpg");
       background-size: cover;
       background-position: center;
       filter: saturate(1.05) contrast(1.05);
@@ -246,11 +246,11 @@
     }
     .hero .container{position:relative; z-index:3}
 
-    /* === Overlay gambar-gambar konstruksi (di atas background) === */
+    /* Overlay gambar-gambar konstruksi */
     .hero-overlays{
       position:absolute;
       inset:0;
-      z-index:2;                /* di atas bg, di bawah konten */
+      z-index:2;
       pointer-events:none;
     }
     .overlay-img{
@@ -274,13 +274,10 @@
       width: clamp(130px, 18vw, 260px);
       opacity:.46;
     }
-
-    /* posisi overlay */
     .overlay-1{ top: 84px; right: -26px; transform: rotate(6deg); }
     .overlay-2{ bottom: 32px; right: 56px; transform: rotate(-5deg); }
     .overlay-3{ top: 140px; left: -30px; transform: rotate(-7deg); }
 
-    /* vignette biar fokus ke teks */
     .vignette{
       position:absolute;
       inset:0;
@@ -541,7 +538,6 @@
       .menu-btn{display:inline-flex}
       .nav-cta{display:none}
 
-      /* overlay disesuaikan */
       .overlay-1{ right:-38px; top: 96px; }
       .overlay-2{ right: 18px; }
       .overlay-3{ left:-38px; }
@@ -560,7 +556,6 @@
       .float-wa{padding:10px}
       .mini-grid{grid-template-columns:1fr}
 
-      /* di HP overlay jangan terlalu ramai */
       .overlay-3{ display:none; }
       .overlay-img{ opacity:.38; }
     }
@@ -631,7 +626,6 @@
 
   <!-- HERO -->
   <main id="top" class="hero">
-    <!-- Overlay gambar-gambar konstruksi -->
     <div class="hero-overlays" aria-hidden="true">
       <img class="overlay-img overlay-1" src="assets/overlay-crane.png" alt="" />
       <img class="overlay-img overlay-2 soft" src="assets/overlay-blueprint.png" alt="" />
@@ -700,14 +694,9 @@
                 <p>Jabodetabek & sekitarnya (sesuaikan).</p>
               </div>
             </div>
-
-            <div style="margin-top:12px; padding:12px; border-radius:16px; border:1px solid rgba(255,255,255,.10); background:rgba(255,255,255,.03); color:rgba(183,178,166,.98); font-size:13.2px; line-height:1.65;">
-              <b style="color:var(--text)">Setup gambar:</b>
-              <div>BG: <b>assets/construction-hero.jpg</b></div>
-              <div>Overlay: <b>assets/overlay-crane.png</b>, <b>overlay-blueprint.png</b>, <b>overlay-worker.png</b></div>
-            </div>
           </div>
         </aside>
+
       </div>
     </div>
   </main>
@@ -932,6 +921,7 @@
   </a>
 
   <script>
+    // Footer year
     document.getElementById("year").textContent = new Date().getFullYear();
 
     // Mobile menu
